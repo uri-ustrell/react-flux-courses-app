@@ -15,7 +15,11 @@ const ManageCoursePage = props => {
 
 	useEffect(() => {
 		const slug = props.match.params.slug; //from path 'courses/:slug'
-	});
+		(async () => {
+			const _course = await courseApi.getCourseBySlug(slug);
+			setCourse(_course);
+		})();
+	}, [props.match.params.slug]);
 
 	const handleChange = ({ target }) => {
 		setCourse({
