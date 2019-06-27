@@ -1,6 +1,6 @@
 import React from "react";
 
-function CourseForm() {
+function CourseForm(props) {
 	return (
 		<form>
 			<div className="form-group">
@@ -10,8 +10,9 @@ function CourseForm() {
 						id="title"
 						type="text"
 						name="title"
+						onChange={props.onChange}
 						className="form-control"
-						value=""
+						value={props.course.title}
 					/>
 				</div>
 			</div>
@@ -22,7 +23,8 @@ function CourseForm() {
 					<select
 						id="author"
 						name="authorId"
-						value=""
+						onChange={props.onChange}
+						value={props.course.authorId || ""}
 						className="form-control"
 					>
 						<option value="" />
@@ -39,8 +41,9 @@ function CourseForm() {
 						type="text"
 						id="category"
 						name="category"
+						onChange={props.onChange}
 						className="form-control"
-						value=""
+						value={props.course.category}
 					/>
 				</div>
 			</div>
