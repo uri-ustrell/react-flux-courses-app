@@ -93,6 +93,22 @@
       "authorId": 2,
       "category": "asdcasdc",
       "createdAt": 1561666937224
+    },
+    {
+      "id": 14,
+      "slug": "hola-qu-tal",
+      "title": "hola què tal??",
+      "authorId": 2,
+      "category": "escacs",
+      "createdAt": 1561761122667
+    },
+    {
+      "id": 15,
+      "slug": "hahahaha",
+      "title": "hahahaha",
+      "authorId": 1,
+      "category": "ahahahahh",
+      "createdAt": 1561761445914
     }
   ],
   "authors": [
