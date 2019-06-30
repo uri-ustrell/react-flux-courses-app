@@ -7,6 +7,7 @@ const CourseList = props => {
 		<table className="table">
 			<thead>
 				<tr>
+					<th>&nbsp;</th>
 					<th>Title</th>
 					<th>Author ID</th>
 					<th>Category</th>
@@ -16,7 +17,19 @@ const CourseList = props => {
 				{props.courses.map(course => {
 					return (
 						<tr key={course.id}>
-							<td><Link to={`course/${course.slug}`}>{course.title}</Link></td>
+							<td>
+								<button
+									className="btn btn-outline-danger"
+									onClick={() => props.deletCourse(course.id)}
+								>
+									Delete
+								</button>
+							</td>
+							<td>
+								<Link to={`course/${course.slug}`}>
+									{course.title}
+								</Link>
+							</td>
 							<td>{course.authorId}</td>
 							<td>{course.category}</td>
 						</tr>
@@ -28,6 +41,7 @@ const CourseList = props => {
 };
 
 CourseList.propTypes = {
+	deletCourse: PropTypes.func.isRequired,
 	courses: PropTypes.arrayOf(
 		PropTypes.shape({
 			id: PropTypes.number.isRequired,
